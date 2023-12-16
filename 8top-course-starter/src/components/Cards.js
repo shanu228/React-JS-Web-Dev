@@ -14,10 +14,15 @@ const Cards = (props) => {
 
   // returns you a array of all courses received from the api response
   const getCourses = () => {
+    console.log("outside return");
     if (category === "All") {
       console.log("Printing Courses");
       console.log(Array.isArray(courses));
       console.log(courses);
+      console.log(
+        "It returns an array of values of an object",
+        Object.values(courses)
+      );
       Object.values(courses).forEach((array) => {
         array.forEach((courseData) => {
           allCourses.push(courseData);
@@ -30,12 +35,15 @@ const Cards = (props) => {
       return allCourses;
     } else {
       // main sirf specific category ka data array pass krunga
+      console.log(courses);
       return courses[category];
     }
   };
 
   return (
     <div className="flex flex-wrap justify-center gap-4 mb-4">
+      {console.log("return")}
+
       {getCourses().map((course) => (
         <Card
           key={course.id}

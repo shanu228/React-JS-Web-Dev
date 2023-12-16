@@ -9,7 +9,7 @@ const Testimonials = (props) => {
 
   function leftShiftHandler() {
     if (index - 1 < 0) {
-      setIndex(reviews.length - 1);
+      setIndex(reviews.length - 1); // setting index to the last index when it becomes negative or -1
     } else {
       setIndex(index - 1);
     }
